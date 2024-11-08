@@ -9,37 +9,28 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.project.databinding.ActivityCalenderBinding;
 import com.example.project.databinding.ActivityHubBinding;
 
-public class hub extends AppCompatActivity {
-    private ActivityHubBinding binding;
+public class calender extends AppCompatActivity {
+    private ActivityCalenderBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 //        EdgeToEdge.enable(this);
-//        setContentView(R.layout.activity_hub);
+//        setContentView(R.layout.activity_calender);
 //        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
 //            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
 //            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
 //            return insets;
 //        });
-        binding = ActivityHubBinding.inflate(getLayoutInflater());
+        binding = ActivityCalenderBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         setListeners();
     }
-
     private void setListeners(){
-        binding.calenderbtn.setOnClickListener(v ->
-            startActivity(new Intent(getApplicationContext(), calender.class))
-        );
-        binding.financebtn.setOnClickListener(v ->
-                startActivity(new Intent(getApplicationContext(), Finance.class))
-        );
-        binding.messagebtn.setOnClickListener(v ->
-                startActivity(new Intent(getApplicationContext(), Message.class))
-        );
-        binding.profilebtn.setOnClickListener(v ->
-                startActivity(new Intent(getApplicationContext(), Profile.class))
+        binding.backbtn.setOnClickListener(v ->
+                finish()
         );
 
     }

@@ -1,6 +1,5 @@
 package com.example.project;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
@@ -9,37 +8,28 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.example.project.databinding.ActivityHubBinding;
+import com.example.project.databinding.ActivityProfileBinding;
 
-public class hub extends AppCompatActivity {
-    private ActivityHubBinding binding;
+public class Profile extends AppCompatActivity {
+    private ActivityProfileBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 //        EdgeToEdge.enable(this);
-//        setContentView(R.layout.activity_hub);
+//        setContentView(R.layout.activity_profile);
 //        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
 //            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
 //            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
 //            return insets;
 //        });
-        binding = ActivityHubBinding.inflate(getLayoutInflater());
+        binding = com.example.project.databinding.ActivityProfileBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         setListeners();
     }
 
     private void setListeners(){
-        binding.calenderbtn.setOnClickListener(v ->
-            startActivity(new Intent(getApplicationContext(), calender.class))
-        );
-        binding.financebtn.setOnClickListener(v ->
-                startActivity(new Intent(getApplicationContext(), Finance.class))
-        );
-        binding.messagebtn.setOnClickListener(v ->
-                startActivity(new Intent(getApplicationContext(), Message.class))
-        );
-        binding.profilebtn.setOnClickListener(v ->
-                startActivity(new Intent(getApplicationContext(), Profile.class))
+        binding.backbtn.setOnClickListener(v ->
+                finish()
         );
 
     }
