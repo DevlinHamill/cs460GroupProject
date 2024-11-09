@@ -36,7 +36,7 @@ public class hub extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), Finance.class))
         );
         binding.messagebtn.setOnClickListener(v ->
-                startActivity(new Intent(getApplicationContext(), Message.class))
+                startActivity(new Intent(getApplicationContext(), MembersList.class))
         );
         binding.profilebtn.setOnClickListener(v ->
                 startActivity(new Intent(getApplicationContext(), Profile.class))
