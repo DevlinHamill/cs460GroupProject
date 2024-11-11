@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Project</string>
+    <string name="calender">Calender</string>
+    <string name="message">Message</string>
+    <string name="profile">Profile</string>
+    <string name="finance">Finance</string>
+    <string name="back_button">Back Button</string>
+    <string name="members">Members</string>
+</resources>
