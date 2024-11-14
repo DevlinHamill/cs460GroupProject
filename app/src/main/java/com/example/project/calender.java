@@ -26,12 +26,18 @@ public class calender extends AppCompatActivity {
 //        });
         binding = ActivityCalenderBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        setListeners();
+        //setListeners();
     }
+    /*
     private void setListeners(){
+
         binding.backbtn.setOnClickListener(v ->
                 finish()
         );
 
+
+
     }
+
+         */
 }
