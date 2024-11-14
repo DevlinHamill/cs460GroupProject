@@ -27,7 +27,7 @@ public class Finance extends AppCompatActivity {
         setListeners();
     }
     private void setListeners(){
-        binding.backbtn.setOnClickListener(v ->
+        binding.backarrow.setOnClickListener(v ->
                 finish()
         );
 
