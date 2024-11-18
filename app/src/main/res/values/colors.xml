@@ -6,4 +6,6 @@
     <color name="Red">#EED52A2A</color>
     <color name="Green">#5B9716</color>
     <color name="BackGround">#462483</color>
+    <color name="input_background">#fbf0d8</color>
+
 </resources>
