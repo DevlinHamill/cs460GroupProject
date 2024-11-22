@@ -1,5 +1,5 @@
 package com.example.project;
 
 public class Member {
-    String name, profileImage;
+    String name, profileImage, id;//, officerStatus;
 }
