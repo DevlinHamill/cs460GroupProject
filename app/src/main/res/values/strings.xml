@@ -27,5 +27,8 @@
     <string name="note_e">Note</string>
     <string name="amount_e">Amount</string>
     <string name="enter_e">Enter</string>
+    <string name="firstn">FirstN</string>
+    <string name="lastn">LastN</string>
+    <string name="sign_out">Sign Out</string>
 
 </resources>
