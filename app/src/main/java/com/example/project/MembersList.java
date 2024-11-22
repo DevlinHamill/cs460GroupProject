@@ -1,7 +1,10 @@
 package com.example.project;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.util.Base64;
 import android.view.View;
 
 import androidx.activity.EdgeToEdge;
@@ -65,7 +68,12 @@ public class MembersList extends AppCompatActivity {
                             }
                             Member member = new Member();
                             member.name = queryDocumentSnapshot.getString(Constants.KEY_FIRST_NAME);
-                            member.profileImage = queryDocumentSnapshot.getString(Constants.KEY_IMAGE);
+
+                            //member.profileImage = queryDocumentSnapshot.getString(Constants.KEY_IMAGE);
+                            byte[] bytes = Base64.decode(queryDocumentSnapshot.getString(Constants.KEY_IMAGE), Base64.DEFAULT);
+                            Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+                            member.profileImage = bitmap;
+
                             member.id = queryDocumentSnapshot.getString(Constants.KEY_USER_ID);
                             //member.officerStatus = queryDocumentSnapshot.getString(Constants.KEY_OFFICER_STATUS);
                             members.add(member);
