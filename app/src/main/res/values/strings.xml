@@ -18,4 +18,14 @@
     <string name="sign_up">Sign Up</string>
     <string name="last_name">Last Name</string>
     <string name="first_name">First Name</string>
+    <string name="financE">Finance</string>
+    <string name="income">Income</string>
+    <string name="note">Note</string>
+    <string name="amount">Amount</string>
+    <string name="enter">Enter</string>
+    <string name="expenses">Expenses</string>
+    <string name="note_e">Note</string>
+    <string name="amount_e">Amount</string>
+    <string name="enter_e">Enter</string>
+
 </resources>
