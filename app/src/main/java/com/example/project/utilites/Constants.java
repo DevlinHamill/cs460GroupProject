@@ -46,4 +46,29 @@ public class Constants {
      * keeps track of the users permission level
      */
     public static final String KEY_PERMISSION = "permission";
+    /**
+     * keeps track of the user
+     */
+    public static final String KEY_USER = "user";
+    /**
+     * Holds the chats in the Firebase
+     */
+    public static final String KEY_COLLECTION_CHAT = "chat";
+    /**
+     * keeps track of the sender in a chat
+     */
+    public static final String KEY_SENDER_ID = "senderId";
+    /**
+     * keeps track of the receiver in a chat
+     */
+    public static final String KEY_RECIEVER_ID = "recieverId";
+    /**
+     * keeps track of the messages in a chat
+     */
+    public static final String KEY_MESSAGE = "message";
+    /**
+     * keeps track of the date from a message
+     */
+    public static final String KEY_TIMESTAMP = "timestamp";
+
 }

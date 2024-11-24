@@ -14,7 +14,9 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.project.adapters.MembersAdapter;
 import com.example.project.databinding.ActivityMembersListBinding;
+import com.example.project.listeners.MemberListener;
 import com.example.project.utilites.PreferenceManager;
 import com.example.project.utilites.Constants;
 
@@ -24,7 +26,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class MembersList extends AppCompatActivity {
+public class MembersList extends AppCompatActivity implements MemberListener {
 
     private ActivityMembersListBinding binding;
     private PreferenceManager preferenceManager;
@@ -32,7 +34,7 @@ public class MembersList extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        binding = com.example.project.databinding.ActivityMembersListBinding.inflate(getLayoutInflater());
+        binding = ActivityMembersListBinding.inflate(getLayoutInflater());
         preferenceManager = new PreferenceManager(getApplicationContext());
         setContentView(binding.getRoot());
         setListeners();
@@ -70,16 +72,18 @@ public class MembersList extends AppCompatActivity {
                             member.name = queryDocumentSnapshot.getString(Constants.KEY_FIRST_NAME);
 
                             //member.profileImage = queryDocumentSnapshot.getString(Constants.KEY_IMAGE);
-                            byte[] bytes = Base64.decode(queryDocumentSnapshot.getString(Constants.KEY_IMAGE), Base64.DEFAULT);
+                            /*byte[] bytes = Base64.decode(queryDocumentSnapshot.getString(Constants.KEY_IMAGE), Base64.DEFAULT);
                             Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
-                            member.profileImage = bitmap;
+                            member.profileImage = bitmap;*/
+                            member.image = queryDocumentSnapshot.getString(Constants.KEY_IMAGE);
 
-                            member.id = queryDocumentSnapshot.getString(Constants.KEY_USER_ID);
+                            //member.id = queryDocumentSnapshot.getString(Constants.KEY_USER_ID);
+                            member.id = queryDocumentSnapshot.getId();
                             //member.officerStatus = queryDocumentSnapshot.getString(Constants.KEY_OFFICER_STATUS);
                             members.add(member);
                         }
                         if(members.size() > 0){
-                            MemberAdapter usersAdapter = new MemberAdapter(members);
+                            MembersAdapter usersAdapter = new MembersAdapter(members, this);
                             binding.membersRecyclerView.setAdapter(usersAdapter);
                             binding.membersRecyclerView.setVisibility(View.VISIBLE);
                         } else {
@@ -109,5 +113,17 @@ public class MembersList extends AppCompatActivity {
         } else {
             binding.progressBar.setVisibility(View.INVISIBLE);
         }
+    }
+
+    /**
+     * Brings user to Message activity
+     * @param member member that was clicked
+     */
+    @Override
+    public void onMemberClicked(Member member) {
+        Intent intent = new Intent(getApplicationContext(), Message.class);
+        intent.putExtra(Constants.KEY_USER, member);
+        startActivity(intent);
+        finish();
     }
 }

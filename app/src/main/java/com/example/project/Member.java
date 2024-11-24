@@ -2,10 +2,12 @@ package com.example.project;
 
 import android.graphics.Bitmap;
 
-public class Member {
-    String name;
+import java.io.Serializable;
 
-    Bitmap profileImage;
-    String id;
+public class Member implements Serializable {
+    public String name;
+    public String image;
+    public Bitmap profileImage;
+    public String id;
     //, officerStatus;
 }
