@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Project</string>
+    <string name="calender">Calender</string>
+    <string name="message">Message</string>
+    <string name="profile">Profile</string>
+    <string name="finance">Finance</string>
+    <string name="back_button">Back Button</string>
+    <string name="members">Members</string>
+    <string name="login_to_continue">Login to continue</string>
+    <string name="welcome_back">Welcome Back</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="sign_in">Sign In</string>
+    <string name="create_new_account">Create New Account</string>
+    <string name="add_image">Add Image</string>
+    <string name="name">Name</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="last_name">Last Name</string>
+    <string name="first_name">First Name</string>
+    <string name="financE">Finance</string>
+    <string name="income">Income</string>
+    <string name="note">Note</string>
+    <string name="amount">Amount</string>
+    <string name="enter">Enter</string>
+    <string name="expenses">Expenses</string>
+    <string name="note_e">Note</string>
+    <string name="amount_e">Amount</string>
+    <string name="enter_e">Enter</string>
+    <string name="firstn">FirstN</string>
+    <string name="lastn">LastN</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="incoMe">Income\n</string>
+    <string name="expense">Expense</string>
+
+</resources>
