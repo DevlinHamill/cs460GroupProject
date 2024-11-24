@@ -2,29 +2,31 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/finance"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Finance">
+    tools:context=".Finance"
+    >
 
     <LinearLayout
-        android:id="@id/layoutHeader"
+        android:id="@+id/layoutHeader"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_vertical"
         android:background="@color/BackGround"
+        android:gravity="center_vertical"
         android:orientation="horizontal"
         android:padding="15dp"
-        app:layout_constraintTop_toTopOf="parent"
-        >
+        app:layout_constraintTop_toTopOf="parent">
+
         <ImageView
             android:id="@+id/backbtn"
             android:layout_width="28dp"
             android:layout_height="28dp"
+            android:layout_marginTop="5dp"
             android:contentDescription="@string/app_name"
             android:src="@drawable/icon_back_arrow"
-            android:layout_marginTop="5dp"
             app:tint="@color/white" />
+
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -32,64 +34,30 @@
             android:layout_marginEnd="10dp"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="@string/financE"
+            android:text="Finance"
             android:textColor="@color/white"
             android:textSize="26sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
     </LinearLayout>
 
+    <ScrollView
+        android:layout_width="409dp"
+        android:layout_height="505dp"
+        android:layout_marginTop="80dp"
+        app:layout_constraintBottom_toTopOf="@+id/Total"
+        app:layout_constraintTop_toTopOf="@+id/layoutHeader"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="1dp">
 
-    <TextView
-        android:id="@+id/Income"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:layout_marginTop="70dp"
-        android:text="Fundraising"
-        android:textAlignment="viewStart"
-        android:textColor="@color/Green"
-        android:textSize="32sp"
-        app:layout_constraintBottom_toTopOf="@+id/Expense"
-        />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/financeRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:visibility="visible"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
-
-    <TextView
-        android:id="@+id/addInc"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:text="499"
-        android:textAlignment="textEnd"
-        android:textColor="@color/Green"
-        android:textSize="32sp"
-        app:layout_constraintBottom_toTopOf="@+id/remExp"
-        />
-
-    <TextView
-        android:id="@+id/Expense"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:layout_marginBottom="64dp"
-        android:text="Food"
-        android:textAlignment="viewStart"
-        android:textColor="@color/Red"
-        android:textSize="32sp"
-        app:layout_constraintBottom_toTopOf="@id/Total"
-
-        />
-
-    <TextView
-        android:id="@+id/remExp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:text="99"
-        android:textAlignment="textEnd"
-        android:textColor="@color/Red"
-        android:textSize="32sp"
-        app:layout_constraintBottom_toTopOf="@+id/result_display"
-        />
+    </ScrollView>
 
     <TextView
         android:id="@+id/Total"
@@ -98,20 +66,28 @@
         android:layout_margin="16dp"
         android:text="Total"
         android:textColor="@color/black"
-        android:textSize="60sp"
+        android:textSize="25sp"
         android:textAlignment="viewStart"
         app:layout_constraintBottom_toTopOf="@id/button_layout"
         />
+
     <TextView
         android:id="@+id/result_display"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:hint="0"
         android:layout_margin="16dp"
-        android:text="400"
+        android:imeOptions="actionNext"
+        android:importantForAutofill="no"
+        android:inputType="numberDecimal"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
         android:textColor="@color/black"
-        android:textSize="60sp"
+        android:textSize="25sp"
         android:textAlignment="textEnd"
         app:layout_constraintBottom_toTopOf="@id/button_layout"/>
+
+
     <LinearLayout
         android:id="@+id/layoutFooter"
         android:layout_width="match_parent"
@@ -145,10 +121,16 @@
                 android:layout_height="72dp"
                 android:layout_margin="12dp"
                 android:backgroundTint="@color/Green"
-                android:text="Income"
+                android:text="@string/income"
                 android:textColor="@color/white"
                 android:textSize="32sp"
                 app:cornerRadius="36dp"/>
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center"
+                android:visibility="invisible"/>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonExpense"
@@ -157,12 +139,15 @@
                 android:layout_height="72dp"
                 android:layout_margin="12dp"
                 android:backgroundTint="@color/Red"
-                android:text="Expense"
+                android:text="@string/expenses"
                 android:textColor="@color/white"
                 android:textSize="32sp"
                 app:cornerRadius="36dp"/>
 
+
         </LinearLayout>
     </LinearLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

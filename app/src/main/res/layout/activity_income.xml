@@ -28,7 +28,7 @@
             android:layout_gravity="center_horizontal" />
 
         <EditText
-            android:id="@+id/note"
+            android:id="@+id/noteIncome"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="60dp"
@@ -43,7 +43,7 @@
             android:textSize="18sp"/>
 
         <EditText
-            android:id="@+id/amount"
+            android:id="@+id/amountIncome"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="20dp"
