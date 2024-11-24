@@ -28,11 +28,7 @@
             android:layout_gravity="center_horizontal" />
 
         <EditText
-<<<<<<< HEAD
             android:id="@+id/noteIncome"
-=======
-            android:id="@+id/note"
->>>>>>> 05a893865e156dc3b8a6615755e6c60f1ccfc6fa
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="60dp"
@@ -47,11 +43,7 @@
             android:textSize="18sp"/>
 
         <EditText
-<<<<<<< HEAD
             android:id="@+id/amountIncome"
-=======
-            android:id="@+id/amount"
->>>>>>> 05a893865e156dc3b8a6615755e6c60f1ccfc6fa
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="20dp"
@@ -87,11 +79,7 @@
                 android:layout_height="25dp"
                 android:layout_gravity="center"
                 android:visibility="invisible"/>
-<<<<<<< HEAD
-
-=======
->>>>>>> 05a893865e156dc3b8a6615755e6c60f1ccfc6fa
-        </FrameLayout>
+</FrameLayout>
 
     </LinearLayout>
 

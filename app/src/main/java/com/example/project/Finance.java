@@ -4,19 +4,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-<<<<<<< HEAD
 import android.widget.Toast;
-=======
->>>>>>> 05a893865e156dc3b8a6615755e6c60f1ccfc6fa
-
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-
 import com.example.project.databinding.ActivityFinanceBinding;
-<<<<<<< HEAD
 import com.example.project.utilites.PreferenceManager;
 import com.example.project.utilites.constant_finance;
 import com.google.android.material.button.MaterialButton;
@@ -29,41 +23,17 @@ import java.util.List;
 public class Finance extends AppCompatActivity implements View.OnClickListener{
     private ActivityFinanceBinding binding;
     private PreferenceManager preferenceManager;
-    public String note;
-    public String amount;
-=======
-import com.google.android.material.button.MaterialButton;
-
-public class Finance extends AppCompatActivity implements View.OnClickListener{
-    private ActivityFinanceBinding binding;
-    TextView Income, Expense, result_display;
-            //MaterialButton buttonAdding, buttonRemove;
->>>>>>> 05a893865e156dc3b8a6615755e6c60f1ccfc6fa
+    public String note,amount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
                 super.onCreate(savedInstanceState);
                 EdgeToEdge.enable(this);
                 binding = ActivityFinanceBinding.inflate(getLayoutInflater());
-<<<<<<< HEAD
                 preferenceManager = new PreferenceManager(getApplicationContext());
                 setContentView(binding.getRoot());
                 setListeners();
                 getIncome();
-=======
-                setContentView(binding.getRoot());
-                ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-                    Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-                    v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-                    return insets; });
-                result_display = findViewById(R.id.result_display);
-                Expense = findViewById(R.id.remExp);
-                Income = findViewById(R.id.addInc);
-                //buttonAdding = findViewById(R.id.ButtonAdding);
-                //buttonRemove = findViewById(R.id.buttonRemove);
-
-                setListeners();
->>>>>>> 05a893865e156dc3b8a6615755e6c60f1ccfc6fa
             }
 
     private void setListeners(){
@@ -74,7 +44,6 @@ public class Finance extends AppCompatActivity implements View.OnClickListener{
             Intent intent = new Intent(getApplicationContext(), Income.class);
             startActivity(intent); });
         binding.buttonExpense.setOnClickListener(v -> {
-<<<<<<< HEAD
             Intent intent = new Intent(getApplicationContext(), Outcome.class);
             startActivity(intent); });
     }
@@ -124,17 +93,6 @@ public class Finance extends AppCompatActivity implements View.OnClickListener{
     public void onClick(View v) {
         MaterialButton button = (MaterialButton) v;
         String buttonText = button.getText().toString();
-       // String dataToCalculate = Outcome.getText().toString();
-=======
-            Intent intent = new Intent(getApplicationContext(), Expense.class);
-            startActivity(intent); });
-
+        // String dataToCalculate = Outcome.getText().toString();
+        }
     }
-    @Override public void onClick(View v) {
-        MaterialButton button = (MaterialButton) v;
-        String buttonText = button.getText().toString();
-        String dataToCalculate = Expense.getText().toString();
-// String dataToCalculate = Income.getText().toString();
->>>>>>> 05a893865e156dc3b8a6615755e6c60f1ccfc6fa
-    }
-}

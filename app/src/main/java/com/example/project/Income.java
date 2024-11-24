@@ -1,5 +1,5 @@
 package com.example.project;
-<<<<<<< HEAD
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -20,37 +20,19 @@ public class Income extends AppCompatActivity {
 
     private ActivityIncomeBinding binding;
     private PreferenceManager preferenceManager;
-=======
 
-import android.os.Bundle;
-import android.preference.PreferenceManager;
-import android.widget.Toast;
-import androidx.appcompat.app.AppCompatActivity;
-//import com.example.groupproject.databinding.ActivityIncomeBinding;
-import com.example.project.databinding.ActivityFinanceBinding;
-import com.example.project.databinding.ActivityIncomeBinding;
-
-public class Income extends AppCompatActivity {
-    private ActivityIncomeBinding binding;
-    private PreferenceManager preferenceManager;
-    private boolean validateIncomeDetails;
->>>>>>> 05a893865e156dc3b8a6615755e6c60f1ccfc6fa
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityIncomeBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-<<<<<<< HEAD
         preferenceManager = new PreferenceManager(getApplicationContext());
-=======
-
->>>>>>> 05a893865e156dc3b8a6615755e6c60f1ccfc6fa
         setListener();
     }
 
     private void setListener() {
-<<<<<<< HEAD
+
         binding.buttonEnter.setOnClickListener(v -> {
             if (isValidIncomeData()) {
                 inCome();
@@ -107,13 +89,3 @@ public class Income extends AppCompatActivity {
         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
     }
 }
-=======
-
-        binding.buttonEnter.setOnClickListener(v -> onBackPressed());
-    }
-    private void showToast(String message) {
-        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
-    }
-
-}
->>>>>>> 05a893865e156dc3b8a6615755e6c60f1ccfc6fa
