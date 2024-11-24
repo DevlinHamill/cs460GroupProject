@@ -1,11 +1,21 @@
 package com.example.project;
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 8db2bd477f358e9f748ac9af52e711a1880efb9a
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Base64;
 import android.widget.Toast;
+<<<<<<< HEAD
+=======
+=======
+import android.os.Bundle;
+>>>>>>> 05a893865e156dc3b8a6615755e6c60f1ccfc6fa
+>>>>>>> 8db2bd477f358e9f748ac9af52e711a1880efb9a
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,6 +23,10 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 8db2bd477f358e9f748ac9af52e711a1880efb9a
 import com.example.project.activities.SignInActivity;
 import com.example.project.databinding.ActivityProfileBinding;
 import com.example.project.utilites.Constants;
@@ -23,6 +37,15 @@ import com.google.firebase.firestore.FirebaseFirestore;
 public class Profile extends AppCompatActivity {
     private ActivityProfileBinding binding;
     private PreferenceManager preferenceManager;
+<<<<<<< HEAD
+=======
+=======
+import com.example.project.databinding.ActivityProfileBinding;
+
+public class Profile extends AppCompatActivity {
+    private ActivityProfileBinding binding;
+>>>>>>> 05a893865e156dc3b8a6615755e6c60f1ccfc6fa
+>>>>>>> 8db2bd477f358e9f748ac9af52e711a1880efb9a
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,8 +58,16 @@ public class Profile extends AppCompatActivity {
 //        });
         binding = com.example.project.databinding.ActivityProfileBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+<<<<<<< HEAD
         preferenceManager = new PreferenceManager(getApplicationContext());
         loadDetails();
+=======
+<<<<<<< HEAD
+        preferenceManager = new PreferenceManager(getApplicationContext());
+        loadDetails();
+=======
+>>>>>>> 05a893865e156dc3b8a6615755e6c60f1ccfc6fa
+>>>>>>> 8db2bd477f358e9f748ac9af52e711a1880efb9a
         setListeners();
     }
 
@@ -44,6 +75,10 @@ public class Profile extends AppCompatActivity {
         binding.backbtn.setOnClickListener(v ->
                 finish()
         );
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 8db2bd477f358e9f748ac9af52e711a1880efb9a
         binding.signoutbtn.setOnClickListener(v->
                 signout()
         );
@@ -76,4 +111,11 @@ public class Profile extends AppCompatActivity {
 
     }
 
+<<<<<<< HEAD
+=======
+=======
+
+    }
+>>>>>>> 05a893865e156dc3b8a6615755e6c60f1ccfc6fa
+>>>>>>> 8db2bd477f358e9f748ac9af52e711a1880efb9a
 }

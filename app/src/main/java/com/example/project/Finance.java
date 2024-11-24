@@ -30,7 +30,7 @@ public class Finance extends AppCompatActivity implements View.OnClickListener{
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         binding = ActivityFinanceBinding.inflate(getLayoutInflater());
-        //preferenceManager = new PreferenceManager(getApplicationContext());
+        preferenceManager = new PreferenceManager(getApplicationContext());
         setContentView(binding.getRoot());
         setListeners();
         getIncome();
@@ -94,5 +94,6 @@ public class Finance extends AppCompatActivity implements View.OnClickListener{
         MaterialButton button = (MaterialButton) v;
         String buttonText = button.getText().toString();
         // String dataToCalculate = Outcome.getText().toString();
+
+        }
     }
-}

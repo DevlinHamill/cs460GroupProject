@@ -1,10 +1,14 @@
 package com.example.project;
 
+<<<<<<< HEAD
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Base64;
 import android.view.View;
+=======
+import android.os.Bundle;
+>>>>>>> 8db2bd477f358e9f748ac9af52e711a1880efb9a
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,6 +16,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+<<<<<<< HEAD
 import com.example.project.adapters.ChatAdapter;
 import com.example.project.databinding.ActivityMessageBinding;
 import com.example.project.model.ChatMessage;
@@ -148,10 +153,31 @@ public class Message extends AppCompatActivity {
     /**
      * Sets up listeners
      */
+=======
+import com.example.project.databinding.ActivityMessageBinding;
+
+public class Message extends AppCompatActivity {
+    private ActivityMessageBinding binding;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+//        EdgeToEdge.enable(this);
+//        setContentView(R.layout.activity_message);
+//        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+//            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+//            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+//            return insets;
+//        });
+        binding = com.example.project.databinding.ActivityMessageBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+        setListeners();
+    }
+>>>>>>> 8db2bd477f358e9f748ac9af52e711a1880efb9a
     private void setListeners(){
         binding.backbtn.setOnClickListener(v ->
                 finish()
         );
+<<<<<<< HEAD
         binding.layoutSend.setOnClickListener(v -> sendMessages());
     }
 
@@ -163,5 +189,8 @@ public class Message extends AppCompatActivity {
     private String getReadableDateTime(Date date){
         return new SimpleDateFormat("MMM dd, yyyy - hh:mm a",
                 Locale.getDefault()).format(date);
+=======
+
+>>>>>>> 8db2bd477f358e9f748ac9af52e711a1880efb9a
     }
 }

@@ -68,7 +68,15 @@ public class MemberAdapter extends RecyclerView.Adapter<MemberAdapter.MemeberVie
         void bindMembers(final Member member){
             //I will add more things to be binded later
             memberName.setText(member.name);
+<<<<<<< HEAD
             imageProfile.setImageBitmap(member.profileImage);
+=======
+<<<<<<< HEAD
+            imageProfile.setImageBitmap(member.profileImage);
+=======
+
+>>>>>>> 05a893865e156dc3b8a6615755e6c60f1ccfc6fa
+>>>>>>> 8db2bd477f358e9f748ac9af52e711a1880efb9a
         }
     }
 }

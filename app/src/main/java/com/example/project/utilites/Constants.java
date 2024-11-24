@@ -46,6 +46,7 @@ public class Constants {
      * keeps track of the users permission level
      */
     public static final String KEY_PERMISSION = "permission";
+<<<<<<< HEAD
     /**
      * keeps track of the user
      */
@@ -71,4 +72,6 @@ public class Constants {
      */
     public static final String KEY_TIMESTAMP = "timestamp";
 
+=======
+>>>>>>> 8db2bd477f358e9f748ac9af52e711a1880efb9a
 }

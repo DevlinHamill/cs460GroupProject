@@ -62,6 +62,26 @@ public class PreferenceManager {
         return sharedPreferences.getString(key,null);
     }
 
+<<<<<<< HEAD
+=======
+
+    public void setFinanceBoolean(String key, boolean value) {
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putBoolean(key, value);
+        editor.apply();
+    }
+    public boolean getFinanceBoolean(String key, boolean defaultValue) {
+        return sharedPreferences.getBoolean(key, defaultValue);
+    }
+    public void setFinanceString(String key, String value) {
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(key, value); editor.apply();
+    }
+
+    public String getFinanceString(String key, String defaultValue) {
+        return sharedPreferences.getString(key, defaultValue);
+    }
+>>>>>>> 8db2bd477f358e9f748ac9af52e711a1880efb9a
     /**
      * clears the entire editor.
      */
