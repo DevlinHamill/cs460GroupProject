@@ -42,6 +42,7 @@
 
     </LinearLayout>
 
+<<<<<<< HEAD
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -79,5 +80,17 @@
             android:visibility="gone"/>
 
     </FrameLayout>
+=======
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/memberRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:orientation="vertical"
+        android:padding="5dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/layoutHeader"
+        />
+>>>>>>> 05a893865e156dc3b8a6615755e6c60f1ccfc6fa
 
 </androidx.constraintlayout.widget.ConstraintLayout>

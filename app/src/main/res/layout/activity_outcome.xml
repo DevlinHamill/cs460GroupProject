@@ -9,7 +9,11 @@
     android:overScrollMode="never"
     android:padding="24dp"
     android:scrollbars="none"
+<<<<<<< HEAD
     tools:context=".Outcome">
+=======
+    tools:context=".Expense">
+>>>>>>> 05a893865e156dc3b8a6615755e6c60f1ccfc6fa
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -28,12 +32,20 @@
             android:layout_gravity="center_horizontal" />
 
         <EditText
+<<<<<<< HEAD
             android:id="@+id/noteOutcome"
+=======
+            android:id="@+id/note"
+>>>>>>> 05a893865e156dc3b8a6615755e6c60f1ccfc6fa
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="60dp"
             android:hint="@string/note_e"
+<<<<<<< HEAD
             android:background="@drawable/background_input"
+=======
+            android:background="@drawable/background_click"
+>>>>>>> 05a893865e156dc3b8a6615755e6c60f1ccfc6fa
             android:imeOptions="actionNext"
             android:importantForAutofill="no"
             android:inputType="textCapSentences"
@@ -43,7 +55,11 @@
             android:textSize="18sp"/>
 
         <EditText
+<<<<<<< HEAD
             android:id="@+id/amountOutcome"
+=======
+            android:id="@+id/amount"
+>>>>>>> 05a893865e156dc3b8a6615755e6c60f1ccfc6fa
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="20dp"

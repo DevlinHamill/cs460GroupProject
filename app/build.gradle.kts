@@ -1,6 +1,9 @@
 plugins {
     alias(libs.plugins.androidApplication)
+<<<<<<< HEAD
     id("com.google.gms.google-services")
+=======
+>>>>>>> 05a893865e156dc3b8a6615755e6c60f1ccfc6fa
 }
 
 android {
@@ -39,9 +42,12 @@ dependencies {
     implementation(libs.activity)
     implementation(libs.constraintlayout)
     implementation(libs.roundedimageview)
+<<<<<<< HEAD
     implementation(libs.firebase.firestore)
     implementation(libs.firebase.messaging)
     implementation(libs.firebase.bom)
+=======
+>>>>>>> 05a893865e156dc3b8a6615755e6c60f1ccfc6fa
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)

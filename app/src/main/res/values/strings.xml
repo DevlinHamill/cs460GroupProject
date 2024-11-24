@@ -6,6 +6,7 @@
     <string name="finance">Finance</string>
     <string name="back_button">Back Button</string>
     <string name="members">Members</string>
+<<<<<<< HEAD
     <string name="login_to_continue">Login to continue</string>
     <string name="welcome_back">Welcome Back</string>
     <string name="email">Email</string>
@@ -18,6 +19,8 @@
     <string name="sign_up">Sign Up</string>
     <string name="last_name">Last Name</string>
     <string name="first_name">First Name</string>
+=======
+>>>>>>> 05a893865e156dc3b8a6615755e6c60f1ccfc6fa
     <string name="financE">Finance</string>
     <string name="income">Income</string>
     <string name="note">Note</string>
@@ -27,6 +30,7 @@
     <string name="note_e">Note</string>
     <string name="amount_e">Amount</string>
     <string name="enter_e">Enter</string>
+<<<<<<< HEAD
     <string name="firstn">FirstN</string>
     <string name="lastn">LastN</string>
     <string name="sign_out">Sign Out</string>
@@ -34,3 +38,6 @@
     <string name="expense">Expense</string>
 
 </resources>
+=======
+</resources>
+>>>>>>> 05a893865e156dc3b8a6615755e6c60f1ccfc6fa

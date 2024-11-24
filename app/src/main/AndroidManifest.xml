@@ -2,8 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+<<<<<<< HEAD
     <uses-permission android:name="android.permission.INTERNET"/>
 
+=======
+>>>>>>> 05a893865e156dc3b8a6615755e6c60f1ccfc6fa
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -14,10 +17,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Project"
         tools:targetApi="31">
+<<<<<<< HEAD
 
         <activity
             android:name=".NewMeeting"
             android:exported="false"/>
+=======
+>>>>>>> 05a893865e156dc3b8a6615755e6c60f1ccfc6fa
         <activity
             android:name=".MembersList"
             android:exported="false" />
@@ -32,12 +38,15 @@
             android:exported="false" />
         <activity
             android:name=".hub"
+<<<<<<< HEAD
             android:exported="false"/>
         <activity
             android:name=".activities.SignUpActivity"
             android:exported="false" />
         <activity
             android:name=".activities.SignInActivity"
+=======
+>>>>>>> 05a893865e156dc3b8a6615755e6c60f1ccfc6fa
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -45,6 +54,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
 
         <service
             android:name=".firebase.MessagingService"
@@ -65,5 +75,18 @@
         <activity
             android:name=".Outcome"/>
     </application>
+=======
+        <activity
+            android:name=".calender"
+            android:exported="true" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+
+    <activity android:name="Income" />
+    <activity android:name="Expense" />
+
+</application>
+>>>>>>> 05a893865e156dc3b8a6615755e6c60f1ccfc6fa
 
 </manifest>

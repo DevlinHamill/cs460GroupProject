@@ -1,11 +1,15 @@
 package com.example.project;
 
 import android.content.Intent;
+<<<<<<< HEAD
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Base64;
 import android.view.View;
+=======
+import android.os.Bundle;
+>>>>>>> 05a893865e156dc3b8a6615755e6c60f1ccfc6fa
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +19,7 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.project.databinding.ActivityMembersListBinding;
+<<<<<<< HEAD
 import com.example.project.utilites.PreferenceManager;
 import com.example.project.utilites.Constants;
 
@@ -22,11 +27,16 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import java.util.ArrayList;
 import java.util.HashMap;
+=======
+
+import java.util.ArrayList;
+>>>>>>> 05a893865e156dc3b8a6615755e6c60f1ccfc6fa
 import java.util.List;
 
 public class MembersList extends AppCompatActivity {
 
     private ActivityMembersListBinding binding;
+<<<<<<< HEAD
     private PreferenceManager preferenceManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,12 +53,55 @@ public class MembersList extends AppCompatActivity {
     /**
      * Sets listener for back button
      */
+=======
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        /*EdgeToEdge.enable(this);
+        setContentView(R.layout.activity_members_list);
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });*/
+
+
+
+
+        binding = com.example.project.databinding.ActivityMembersListBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+        setListeners();
+
+        //Test data
+        //Will update once project is connected to firebase
+        RecyclerView memberRecyclerView = findViewById(R.id.memberRecyclerView);
+        List<Member> memberList =new ArrayList<>();
+
+        Member john = new Member();
+        john.name = "John Doe";
+        memberList.add(john);
+
+        Member jane = new Member();
+        jane.name = "Jane Smith";
+        memberList.add(jane);
+
+        Member ada = new Member();
+        ada.name = "Ada Veum";
+        memberList.add(ada);
+
+        final MemberAdapter posterAdapter = new MemberAdapter(memberList);
+        memberRecyclerView.setAdapter(posterAdapter);
+
+    }
+
+>>>>>>> 05a893865e156dc3b8a6615755e6c60f1ccfc6fa
     private void setListeners(){
         binding.backbtn.setOnClickListener(v ->
                 finish()
         );
 
     }
+<<<<<<< HEAD
 
     /**
      * Gets the collection of Members from the Firebase Database
@@ -110,4 +163,6 @@ public class MembersList extends AppCompatActivity {
             binding.progressBar.setVisibility(View.INVISIBLE);
         }
     }
+=======
+>>>>>>> 05a893865e156dc3b8a6615755e6c60f1ccfc6fa
 }
