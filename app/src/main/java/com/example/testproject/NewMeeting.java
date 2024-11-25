@@ -9,6 +9,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.testproject.databinding.ActivityCalenderBinding;
 import com.example.testproject.databinding.ActivityNewMeetingBinding;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
 
 public class NewMeeting extends AppCompatActivity {
     private @NonNull ActivityNewMeetingBinding binding;
@@ -46,13 +49,29 @@ public class NewMeeting extends AppCompatActivity {
             int hour12Format = (hour == 0 || hour == 12) ? 12 : hour % 12;
             time = hour + ":" + minute + " " +period;
 
+            addMeetingToFirebase();
 
-
-            //finish();
+            finish();
         });
     }
 
     private void showToast(String message){
         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+    }
+
+    private void addMeetingToFirebase(){
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        HashMap<String, String> meetings = new HashMap<>();
+
+        meetings.put("Meeting_Name", name);
+        meetings.put("Meeting_Date", date);
+        meetings.put("Meeting_Time", time);
+        meetings.put("Meeting_Description", desc);
+
+        db.collection("Meetings").add(meetings).addOnSuccessListener( documentReference -> {
+            showToast("meeting added");
+        }).addOnFailureListener(exception ->{
+            showToast(exception.getMessage());
+        });
     }
 }

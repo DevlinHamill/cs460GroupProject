@@ -49,17 +49,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <EditText
-        android:id="@+id/meetingDate"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:hint="Meeting Date (YYYY-MM-DD)"
-        android:padding="12dp"
-        android:inputType="date"
-        app:layout_constraintTop_toBottomOf="@id/meetingTitle"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+
 
     <TimePicker
         android:id="@+id/meetingTime"
@@ -67,7 +57,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:timePickerMode="spinner"
-        app:layout_constraintTop_toBottomOf="@id/meetingDate"
+        app:layout_constraintTop_toBottomOf="@id/meetingTitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
