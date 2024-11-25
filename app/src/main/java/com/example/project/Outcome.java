@@ -35,6 +35,10 @@ public class Outcome extends AppCompatActivity {
                 outCome();
             }
         });
+
+        binding.backbtn.setOnClickListener(v ->
+                finish()
+        );
     }
 
     private void outCome() { //store data in firebase

@@ -35,6 +35,9 @@ public class Income extends AppCompatActivity {
                 inCome();
             }
         });
+        binding.backbtn.setOnClickListener(v ->
+                finish()
+        );
     }
 
     private void inCome() { //store data in firebase

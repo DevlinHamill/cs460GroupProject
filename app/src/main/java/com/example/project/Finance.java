@@ -71,7 +71,7 @@ public class Finance extends AppCompatActivity implements View.OnClickListener{
 
                         }
                         if (incomes.size() > 0) {
-                            
+
                             FinanceAdapter incomeAdapter = new FinanceAdapter(incomes);
 
                             binding.financeRecyclerView.setAdapter(incomeAdapter);
