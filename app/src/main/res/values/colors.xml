@@ -6,8 +6,8 @@
     <color name="Red">#EED52A2A</color>
     <color name="Green">#5B9716</color>
 
-    <color name="BackGround">#462483</color>
-    <color name="primary">#0D37B3</color>
+    <color name="BackGround">#0773F8</color>
+    <color name="primary">#0773F8</color>
     <color name="primary_text">#212121</color>
     <color name="secoundary_text">#757575</color>
     <color name="input_background">#ECECEC</color>

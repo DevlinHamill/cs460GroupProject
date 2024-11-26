@@ -21,6 +21,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            android:backgroundTint="@color/primary"
             android:text="@string/message"
             android:visibility="visible" />
 
@@ -29,6 +30,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            android:backgroundTint="@color/primary"
             android:text="@string/calender"
             android:visibility="visible" />
 
@@ -39,6 +41,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:text="@string/profile"
+            android:backgroundTint="@color/primary"
             android:visibility="visible" />
 
         <Button
@@ -47,6 +50,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:text="@string/finance"
+            android:backgroundTint="@color/primary"
             android:visibility="visible" />
     </LinearLayout>
 

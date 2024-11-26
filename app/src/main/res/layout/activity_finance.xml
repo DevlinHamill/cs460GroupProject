@@ -16,6 +16,7 @@
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:padding="15dp"
+        android:backgroundTint="@color/primary"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
@@ -98,6 +99,7 @@
         android:padding="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        android:backgroundTint="@color/primary"
         />
     <LinearLayout
         android:id="@+id/button_layout"
@@ -112,7 +114,8 @@
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:background="@color/primary">
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/ButtonAdding"

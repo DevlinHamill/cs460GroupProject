@@ -80,7 +80,8 @@
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                app:cornerRadius="8sp"/>
+                app:cornerRadius="8sp"
+                android:backgroundTint="@color/primary"/>
 
             <ProgressBar
                 android:id="@+id/progressBar"
