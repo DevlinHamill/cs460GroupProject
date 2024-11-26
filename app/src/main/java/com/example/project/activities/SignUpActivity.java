@@ -22,6 +22,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.project.databinding.ActivitySignUpBinding;
 import com.example.project.utilites.Constants;
 import com.example.project.utilites.PreferenceManager;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.io.ByteArrayOutputStream;
@@ -123,6 +124,7 @@ public class SignUpActivity extends AppCompatActivity {
                 preferenceManager.putBoolean(Constants.KEY_IS_SIGNED_IN, true);
                 preferenceManager.putString(Constants.KEY_FIRST_NAME, binding.inputFirstName.getText().toString());
                 preferenceManager.putString(Constants.KEY_LAST_NAME, binding.inputLastName.getText().toString());
+                preferenceManager.putString(Constants.KEY_USER_ID, documentReference.getId());
                 preferenceManager.putString(Constants.KEY_IMAGE, encodeImage);
                 preferenceManager.putString(Constants.KEY_EMAIL, binding.inputEmail.getText().toString());
                 preferenceManager.putString(Constants.KEY_PERMISSION, "1");

@@ -25,6 +25,12 @@ managing how financial data is presented in the RecyclerView
         return new FinanceViewHolder(view);
     }
 
+    /**
+     *
+     * @param holder The ViewHolder which should be updated to represent the contents of the
+     *        item at the given position in the data set.
+     * @param position The position of the item within the adapter's data set.
+     */
     @Override
     public void onBindViewHolder(@NonNull FinanceViewHolder holder, int position) {
 

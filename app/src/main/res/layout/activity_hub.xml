@@ -17,6 +17,14 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <Button
+            android:id="@+id/messagebtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="@string/message"
+            android:visibility="visible" />
+
+        <Button
             android:id="@+id/calenderbtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -24,13 +32,6 @@
             android:text="@string/calender"
             android:visibility="visible" />
 
-        <Button
-            android:id="@+id/messagebtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:text="@string/message"
-            android:visibility="visible" />
 
         <Button
             android:id="@+id/profilebtn"

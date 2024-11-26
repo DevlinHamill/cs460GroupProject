@@ -2,6 +2,7 @@ package com.example.project;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,22 +11,20 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.project.databinding.ActivityHubBinding;
+import com.example.project.utilites.Constants;
+import com.example.project.utilites.PreferenceManager;
 
 public class hub extends AppCompatActivity {
+    private PreferenceManager preferenceManager;
     private ActivityHubBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        EdgeToEdge.enable(this);
-//        setContentView(R.layout.activity_hub);
-//        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-//            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-//            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-//            return insets;
-//        });
+        preferenceManager = new PreferenceManager(getApplicationContext());
         binding = ActivityHubBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         setListeners();
+        setVis();
     }
 
     private void setListeners(){
@@ -42,5 +41,18 @@ public class hub extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), Profile.class))
         );
 
+    }
+    private void setVis(){
+        /*User and officer*/
+        if(preferenceManager.getString(Constants.KEY_PERMISSION).equals("1")
+        || preferenceManager.getString(Constants.KEY_PERMISSION).equals("2")){
+            binding.financebtn.setVisibility(View.INVISIBLE);
+
+        /*Treasurer*/
+        }else if(preferenceManager.getString(Constants.KEY_PERMISSION).equals("4")){
+            binding.messagebtn.setVisibility(View.INVISIBLE);
+
+        }
+        /*presidents can access everything*/
     }
 }

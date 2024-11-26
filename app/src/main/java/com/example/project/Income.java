@@ -36,7 +36,7 @@ public class Income extends AppCompatActivity {
             }
         });
         binding.backbtn.setOnClickListener(v ->
-                finish()
+                onBackPressed()
         );
     }
 

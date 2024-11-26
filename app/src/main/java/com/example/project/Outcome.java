@@ -37,7 +37,7 @@ public class Outcome extends AppCompatActivity {
         });
 
         binding.backbtn.setOnClickListener(v ->
-                finish()
+                onBackPressed()
         );
     }
 

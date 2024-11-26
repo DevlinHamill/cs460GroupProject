@@ -37,7 +37,7 @@ public class Finance extends AppCompatActivity implements View.OnClickListener{
 
     private void setListeners(){
         binding.backbtn.setOnClickListener(v ->
-                finish()
+                onBackPressed()
         );
         binding.ButtonAdding.setOnClickListener(v -> {
             Intent intent = new Intent(getApplicationContext(), Income.class);

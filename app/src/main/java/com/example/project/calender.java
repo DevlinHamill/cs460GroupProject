@@ -20,7 +20,7 @@ public class calender extends AppCompatActivity {
 
     private void setListeners() {
         binding.backarrow.setOnClickListener(v ->
-                finish()
+                onBackPressed()
         );
 
        binding.addMeeting.setOnClickListener(v ->
