@@ -80,7 +80,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:backgroundTint="@color/Green"
-            android:text="Add Meeting"
+            android:text="@string/add_meeting"
             android:textColor="@color/white" />
 
         <com.google.android.material.button.MaterialButton
@@ -90,7 +90,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:backgroundTint="@color/Red"
-            android:text="Remove Meeting"
+            android:text="@string/remove_meeting"
             android:textColor="@color/white" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

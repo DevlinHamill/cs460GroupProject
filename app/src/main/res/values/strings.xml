@@ -31,5 +31,9 @@
     <string name="lastn">LastN</string>
     <string name="sign_out">Sign Out</string>
     <string name="type_a_message">Type a message</string>
+    <string name="remove_meeting">Remove Meeting</string>
+    <string name="add_meeting">Add Meeting</string>
+    <string name="confirm_meeting">Confirm Meeting</string>
+    <string name="meeting_description">Meeting Description</string>
 
 </resources>
