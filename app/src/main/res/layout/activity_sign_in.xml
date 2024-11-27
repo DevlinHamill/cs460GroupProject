@@ -16,10 +16,21 @@
         android:gravity="center_horizontal"
         android:orientation="vertical">
 
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/imageProfile"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/background_profile_image"
+            android:src="@mipmap/ic_launcher_foreground"
+            android:scaleType="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:riv_oval="true"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="30dp"
             android:text="@string/welcome_back"
             android:textColor="@color/primary"
             android:textSize="24sp"
