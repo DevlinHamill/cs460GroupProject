@@ -14,7 +14,10 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
 import java.util.StringTokenizer;
-
+/**
+ * @author BT&T
+ * CS 460
+ */
 public class NewMeeting extends AppCompatActivity {
     /**
      * binds the xml with the java

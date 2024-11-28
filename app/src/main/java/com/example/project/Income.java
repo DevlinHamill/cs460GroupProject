@@ -12,7 +12,10 @@ import com.example.project.utilites.constant_finance;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
-
+/**
+ * @author BT&T
+ * CS 460
+ */
 public class Income extends AppCompatActivity {
     /**
      * connects the xml to the java file

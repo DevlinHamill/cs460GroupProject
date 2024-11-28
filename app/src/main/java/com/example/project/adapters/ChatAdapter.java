@@ -13,6 +13,10 @@ import com.example.project.model.ChatMessage;
 
 import java.util.List;
 
+/**
+ * @author BT&T
+ * CS 460
+ */
 public class ChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     /**
      * bitmap that holds the receiving chat image data

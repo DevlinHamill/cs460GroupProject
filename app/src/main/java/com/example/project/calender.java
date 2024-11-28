@@ -18,7 +18,10 @@ import com.example.project.utilites.PreferenceManager;
 import com.example.project.utilites.constant_meetings;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
-
+/**
+ * @author BT&T
+ * CS 460
+ */
 public class calender extends AppCompatActivity{
     /**
      * references an object that keeps track of the current users data

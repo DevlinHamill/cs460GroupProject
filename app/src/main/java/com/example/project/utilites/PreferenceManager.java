@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 /**
- * @author Devlin Hamill
+ * @author BT&T
  * CS 460
  */
 

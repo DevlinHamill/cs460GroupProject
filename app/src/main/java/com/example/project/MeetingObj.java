@@ -1,5 +1,9 @@
 package com.example.project;
 
+/**
+ * @author BT&T
+ * CS 460
+ */
 public class MeetingObj {
     /**
      * keeps track of the date

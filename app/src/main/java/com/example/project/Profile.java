@@ -19,7 +19,10 @@ import com.example.project.utilites.Constants;
 import com.example.project.utilites.PreferenceManager;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
-
+/**
+ * @author BT&T
+ * CS 460
+ */
 public class Profile extends AppCompatActivity {
     /**
      * binds the xml to the java file

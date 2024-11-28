@@ -25,7 +25,10 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
-
+/**
+ * @author BT&T
+ * CS 460
+ */
 public class Message extends AppCompatActivity {
     /**
      * binds the xml to the java

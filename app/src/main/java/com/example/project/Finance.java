@@ -16,7 +16,10 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * @author BT&T
+ * CS 460
+ */
 public class Finance extends AppCompatActivity{
     /**
      * attaches the xml to the java doc

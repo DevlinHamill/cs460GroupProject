@@ -1,5 +1,8 @@
 package com.example.project.utilites;
-
+/**
+ * @author BT&T
+ * CS 460
+ */
 public class constant_finance {
     /**
      * constant note variable that keeps storing firebase data more consistent

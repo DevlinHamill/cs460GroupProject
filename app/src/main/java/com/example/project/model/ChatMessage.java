@@ -2,6 +2,10 @@ package com.example.project.model;
 
 import java.util.Date;
 
+/**
+ * @author BT&T
+ * CS 460
+ */
 public class ChatMessage {
     /**
      * keeps track of the senders user ID

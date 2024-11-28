@@ -9,7 +9,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.project.databinding.ActivityHubBinding;
 import com.example.project.utilites.Constants;
 import com.example.project.utilites.PreferenceManager;
-
+/**
+ * @author BT&T
+ * CS 460
+ */
 public class hub extends AppCompatActivity {
     /**
      * stores the current user data

@@ -1,7 +1,7 @@
 package com.example.project.utilites;
 
 /**
- * @author Devlin Hamill
+ * @author BT&T
  * CS 460
  */
 

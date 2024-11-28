@@ -12,6 +12,11 @@ import com.example.project.databinding.ItemContainerMeetingBinding;
 
 import java.util.List;
 
+/**
+ * @author BT&T
+ * CS 460
+ */
+
 public class MeetingAdapter extends RecyclerView.Adapter<MeetingAdapter.MeetingViewHolder> {
 
     /**
@@ -108,7 +113,7 @@ public class MeetingAdapter extends RecyclerView.Adapter<MeetingAdapter.MeetingV
 
 
             binding.NameTextView.setText(obj.Name);
-            binding.DescriptionTextView.setText(obj.Name);
+            binding.DescriptionTextView.setText(obj.Description);
             binding.DateTextView.setText(obj.Date);
             binding.TimeTextView.setText(obj.Time);
 

@@ -1,5 +1,8 @@
 package com.example.project.utilites;
-
+/**
+ * @author BT&T
+ * CS 460
+ */
 public class constant_meetings {
     /**
      * keeps track of the collection name for meetings

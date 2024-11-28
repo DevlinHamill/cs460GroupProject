@@ -31,10 +31,9 @@ import java.io.InputStream;
 import java.util.HashMap;
 
 /**
- * @author Devlin Hamill
+ * @author BT&T
  * CS 460
  */
-
 public class SignUpActivity extends AppCompatActivity {
     /**
      * binds the xml data to the java file

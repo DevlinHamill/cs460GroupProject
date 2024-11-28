@@ -3,7 +3,10 @@ package com.example.project;
 import android.graphics.Bitmap;
 
 import java.io.Serializable;
-
+/**
+ * @author BT&T
+ * CS 460
+ */
 public class Member implements Serializable {
     /**
      * keeps track of the first name of the user

@@ -14,7 +14,10 @@ import com.example.project.databinding.ItemContainerMemberBinding;
 import com.example.project.listeners.MemberListener;
 
 import java.util.List;
-
+/**
+ * @author BT&T
+ * CS 460
+ */
 public class MembersAdapter extends RecyclerView.Adapter<MembersAdapter.MemberViewHolder> {
     /**
      * keeps track of all members

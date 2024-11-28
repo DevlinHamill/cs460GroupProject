@@ -18,7 +18,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 /**
- * @author Devlin Hamill
+ * @author BT&T
  * CS 460
  */
 
