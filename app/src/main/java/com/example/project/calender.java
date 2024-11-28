@@ -13,11 +13,14 @@ import java.util.Locale;
 
 import com.example.project.adapters.MeetingAdapter;
 import com.example.project.databinding.ActivityCalenderBinding;
+import com.example.project.utilites.Constants;
+import com.example.project.utilites.PreferenceManager;
 import com.example.project.utilites.constant_meetings;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 
 public class calender extends AppCompatActivity{
+    private PreferenceManager preferenceManager;
     private ActivityCalenderBinding binding;
     public boolean calenderSelected;
     private NewMeeting meet;
@@ -27,6 +30,12 @@ public class calender extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityCalenderBinding.inflate(getLayoutInflater());
+        preferenceManager = new PreferenceManager(getApplicationContext());
+
+        if(preferenceManager.getString(Constants.KEY_PERMISSION).equals("1")){
+            binding.removeMeeting.setVisibility(View.INVISIBLE);
+            binding.addMeeting.setVisibility(View.INVISIBLE);
+        }
 
         // Format the date to MM/DD/YYYY
         SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy", Locale.getDefault());
