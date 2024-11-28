@@ -13,6 +13,7 @@ import com.example.project.databinding.ActivityNewMeetingBinding;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
+import java.util.StringTokenizer;
 
 public class NewMeeting extends AppCompatActivity {
     private @NonNull ActivityNewMeetingBinding binding;
@@ -52,7 +53,7 @@ public class NewMeeting extends AppCompatActivity {
 
                 addMeetingToFirebase();
 
-                finish();
+                onBackPressed();
             }
         });
     }
@@ -64,10 +65,11 @@ public class NewMeeting extends AppCompatActivity {
     private void addMeetingToFirebase(){
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         HashMap<String, String> meetings = new HashMap<>();
+        String newtime = convertTo12Hour(time);
 
         meetings.put("Meeting_Name", name);
         meetings.put("Meeting_Date", date);
-        meetings.put("Meeting_Time", time);
+        meetings.put("Meeting_Time", newtime);
         meetings.put("Meeting_Description", desc);
 
         db.collection("Meetings").add(meetings).addOnSuccessListener( documentReference -> {
@@ -89,4 +91,17 @@ public class NewMeeting extends AppCompatActivity {
         }
     }
 
+    private String convertTo12Hour(String time24){
+        StringTokenizer tokenizer = new StringTokenizer(time24, ":");
+        int hour = 0;
+
+
+        hour = Integer.parseInt(tokenizer.nextToken());
+
+
+        int hour12 = (hour == 0 || hour == 12) ? 12 : hour % 12;
+
+        return hour12 +":"+ tokenizer.nextToken();
+
+    }
 }
