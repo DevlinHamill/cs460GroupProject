@@ -12,4 +12,6 @@ public class MeetingObj {
 
     public String id;
 
+    public boolean isSelected;
+
 }

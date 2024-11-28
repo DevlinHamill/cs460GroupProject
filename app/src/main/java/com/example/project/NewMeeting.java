@@ -2,6 +2,7 @@ package com.example.project;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Patterns;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -36,22 +37,23 @@ public class NewMeeting extends AppCompatActivity {
 
         binding.confirmMeetingButton.setOnClickListener(v -> {
             // TODO add logic for a new meeting in the database (at a later date)
+            if(isValidateMeetingDetails()) {
+                name = binding.meetingTitle.getText().toString();
+                desc = binding.meetingDescription.getText().toString();
 
-            name = binding.meetingTitle.getText().toString();
-            desc = binding.meetingDescription.getText().toString();
+                //get the time from the TimePicker
+                int hour = binding.meetingTime.getHour(); // 24-hour format
+                int minute = binding.meetingTime.getMinute();
+                // Convert 24-hour format to 12-hour format with AM/PM
+                String period = (hour >= 12) ? "PM" : "AM";
+                // since hour is still in military time, we change it back with modulo math
+                int hour12Format = (hour == 0 || hour == 12) ? 12 : hour % 12;
+                time = hour + ":" + minute + " " + period;
 
-            //get the time from the TimePicker
-            int hour = binding.meetingTime.getHour(); // 24-hour format
-            int minute = binding.meetingTime.getMinute();
-            // Convert 24-hour format to 12-hour format with AM/PM
-            String period = (hour >= 12) ? "PM" : "AM";
-            // since hour is still in military time, we change it back with modulo math
-            int hour12Format = (hour == 0 || hour == 12) ? 12 : hour % 12;
-            time = hour + ":" + minute + " " +period;
+                addMeetingToFirebase();
 
-            addMeetingToFirebase();
-
-            finish();
+                finish();
+            }
         });
     }
 
@@ -74,4 +76,17 @@ public class NewMeeting extends AppCompatActivity {
             showToast(exception.getMessage());
         });
     }
+
+    private boolean isValidateMeetingDetails() {
+        if (binding.meetingDescription.getText().toString().trim().isEmpty()){
+            showToast("Please enter a description for the meeting");
+            return false;
+        }else if(binding.meetingTitle.getText().toString().trim().isEmpty()) {
+            showToast("Please enter a meeting title");
+            return false;
+        }else{
+            return true;
+        }
+    }
+
 }

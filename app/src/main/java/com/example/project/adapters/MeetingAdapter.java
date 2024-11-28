@@ -1,15 +1,14 @@
 package com.example.project.adapters;
 
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.project.listeners.MeetingListener;
 import com.example.project.MeetingObj;
 import com.example.project.databinding.ItemContainerMeetingBinding;
-import com.example.project.listeners.MeetingListener;
 
 import java.util.List;
 
@@ -18,13 +17,10 @@ public class MeetingAdapter extends RecyclerView.Adapter<MeetingAdapter.MeetingV
 
     private final List<MeetingObj> meetingList;
 
-    private final MeetingListener meetingListener;
-
-
-    public MeetingAdapter(List<MeetingObj> meetingList, MeetingListener meetingListener) {
+    public MeetingAdapter(List<MeetingObj> meetingList) {
 
         this.meetingList = meetingList;
-        this.meetingListener = meetingListener;
+
     }
 
     @NonNull
@@ -43,8 +39,17 @@ public class MeetingAdapter extends RecyclerView.Adapter<MeetingAdapter.MeetingV
      */
     @Override
     public void onBindViewHolder(@NonNull MeetingViewHolder holder, int position) {
-
+        MeetingObj meeting = meetingList.get(position);
         holder.setMeetingData(meetingList.get(position));
+
+        holder.itemView.setBackgroundColor(
+                meeting.isSelected ? Color.GRAY : Color.WHITE
+        );
+
+        holder.itemView.setOnClickListener(v -> {
+            meeting.isSelected = !meeting.isSelected;
+            notifyItemChanged(position);
+        });
 
     }
 
@@ -68,14 +73,20 @@ public class MeetingAdapter extends RecyclerView.Adapter<MeetingAdapter.MeetingV
 
         void setMeetingData(MeetingObj obj){
 
+
             binding.NameTextView.setText(obj.Name);
             binding.DescriptionTextView.setText(obj.Name);
+            binding.DateTextView.setText(obj.Date);
             binding.TimeTextView.setText(obj.Time);
-            binding.getRoot().setOnClickListener(v -> meetingListener.onMeetingClicked(obj));
+
+
+            if(obj.isSelected){
+                binding.containerLayout.setBackgroundColor(Color.GRAY);
+            }else{
+                binding.containerLayout.setBackgroundColor(Color.WHITE);
+            }
 
         }
 
     }
 }
-
-
