@@ -15,10 +15,15 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.HashMap;
 
 public class Outcome extends AppCompatActivity {
+    /**
+     * binds the xml to the java application
+     */
     private ActivityOutcomeBinding binding;
-    private PreferenceManager preferenceManager;
-    private boolean validateIncomeDetails;
 
+    /**
+     * creates the application
+     * @param savedInstanceState the current application instance
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +33,9 @@ public class Outcome extends AppCompatActivity {
         setListener();
     }
 
+    /**
+     * sets the listeners for the application
+     */
     private void setListener() {
 
         binding.buttonEnter.setOnClickListener(v -> {
@@ -41,9 +49,18 @@ public class Outcome extends AppCompatActivity {
         );
     }
 
+    /**
+     * adds an expense to the application
+     */
     private void outCome() { //store data in firebase
         loading(true);
+        /**
+         * refrences the firestore database
+         */
         FirebaseFirestore database = FirebaseFirestore.getInstance();
+        /**
+         * stores the finance info based on inputs
+         */
         HashMap<String, String> finance = new HashMap<>();
         finance.put(constant_finance.KEY_Note, binding.noteOutcome.getText().toString());
         finance.put(constant_finance.KEY_Amount, binding.amountOutcome.getText().toString());
@@ -65,6 +82,11 @@ public class Outcome extends AppCompatActivity {
                     showToast(exception.getMessage());
                 });
     }
+
+    /**
+     * sets the GUI visibility based on a if the application is loading
+     * @param isLoading tells if the applicaiton is loading
+     */
     private void loading(boolean isLoading) {
         if (isLoading) {
             binding.buttonEnter.setVisibility(View.INVISIBLE);
@@ -75,6 +97,10 @@ public class Outcome extends AppCompatActivity {
         }
     }
 
+    /**
+     * checks if the inputs are valid
+     * @return a boolean value that tell if the inputs are valid
+     */
     private boolean isValidIncomeData() {
         if (binding.noteOutcome.getText().toString().trim().isEmpty()) {
             showToast("Please put Note");
@@ -87,6 +113,10 @@ public class Outcome extends AppCompatActivity {
         }
     }
 
+    /**
+     * displays a toast message based on a input
+     * @param message input that needs to be displayed
+     */
     private void showToast(String message) {
         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
     }

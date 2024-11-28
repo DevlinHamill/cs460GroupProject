@@ -2,5 +2,7 @@ package com.example.project;
 
 public class FinanceObj {
 
-    String Amount, Note, Condition;
+    String Amount;
+    String Note;
+    String Condition;
 }

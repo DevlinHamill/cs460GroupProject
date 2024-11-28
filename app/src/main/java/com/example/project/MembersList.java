@@ -18,9 +18,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MembersList extends AppCompatActivity implements MemberListener {
-
+    /**
+     * binds the xml to the java file
+     */
     private ActivityMembersListBinding binding;
+    /**
+     * prefrence manager object that keeps track of the current users info
+     */
     private PreferenceManager preferenceManager;
+
+    /**
+     * creates the applicaiton
+     * @param savedInstanceState the current application instance
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,32 +58,41 @@ public class MembersList extends AppCompatActivity implements MemberListener {
      */
     private void getUsers(){
         loading(true);
+        /**
+         * keeps track of the firestore database
+         */
         FirebaseFirestore database = FirebaseFirestore.getInstance();
         database.collection(Constants.KEY_COLLECTION_USERS).get()
                 .addOnCompleteListener(task -> {
                     loading(false);
                     String currentUserID = preferenceManager.getString(Constants.KEY_USER_ID);
                     if(task.isSuccessful() && task.getResult() != null){
+                        /**
+                         * stores all members objects
+                         */
                         List<Member> members = new ArrayList<>();
                         for(QueryDocumentSnapshot queryDocumentSnapshot: task.getResult()){
                             if(currentUserID.equals(queryDocumentSnapshot.getId())){
                                 continue;
                             }
+                            /**
+                             * keeps track of the current member
+                             */
                             Member member = new Member();
                             member.Fname = queryDocumentSnapshot.getString(Constants.KEY_FIRST_NAME);
                             member.Lname = queryDocumentSnapshot.getString(Constants.KEY_LAST_NAME);
-                            //member.profileImage = queryDocumentSnapshot.getString(Constants.KEY_IMAGE);
-                            /*byte[] bytes = Base64.decode(queryDocumentSnapshot.getString(Constants.KEY_IMAGE), Base64.DEFAULT);
-                            Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
-                            member.profileImage = bitmap;*/
+
                             member.image = queryDocumentSnapshot.getString(Constants.KEY_IMAGE);
 
-                            //member.id = queryDocumentSnapshot.getString(Constants.KEY_USER_ID);
+
                             member.id = queryDocumentSnapshot.getId();
-                            //member.officerStatus = queryDocumentSnapshot.getString(Constants.KEY_OFFICER_STATUS);
+
                             members.add(member);
                         }
                         if(members.size() > 0){
+                            /**
+                             * creates a member adapter object
+                             */
                             MembersAdapter usersAdapter = new MembersAdapter(members, this);
                             binding.membersRecyclerView.setAdapter(usersAdapter);
                             binding.membersRecyclerView.setVisibility(View.VISIBLE);

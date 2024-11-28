@@ -21,18 +21,23 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class Profile extends AppCompatActivity {
+    /**
+     * binds the xml to the java file
+     */
     private ActivityProfileBinding binding;
+    /**
+     * create a preference manger object to get the current users info
+     */
     private PreferenceManager preferenceManager;
+
+    /**
+     * creates the application
+     * @param savedInstanceState contains the current instance of the aplicaiton
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        EdgeToEdge.enable(this);
-//        setContentView(R.layout.activity_profile);
-//        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-//            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-//            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-//            return insets;
-//        });
+
         binding = com.example.project.databinding.ActivityProfileBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         preferenceManager = new PreferenceManager(getApplicationContext());
@@ -40,6 +45,9 @@ public class Profile extends AppCompatActivity {
         setListeners();
     }
 
+    /**
+     * sets the listeners for the buttons
+     */
     private void setListeners(){
         binding.backbtn.setOnClickListener(v ->
                 finish()
@@ -50,29 +58,29 @@ public class Profile extends AppCompatActivity {
 
     }
 
+    /**
+     * loads the user details so it can be display on the profile page
+     */
     private void loadDetails(){
         binding.fname.setText(preferenceManager.getString(Constants.KEY_FIRST_NAME));
         binding.LastnLabel.setText(preferenceManager.getString(Constants.KEY_LAST_NAME));
         binding.emailLabel.setText(preferenceManager.getString(Constants.KEY_EMAIL));
-
+        /**
+         * creates a byte array to store the decode image
+         */
         byte[] bytes = Base64.decode(preferenceManager.getString(Constants.KEY_IMAGE), Base64.DEFAULT);
         Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
         binding.imageProfile.setImageBitmap(bitmap);
     }
 
-
+    /**
+     * signs the user out
+     */
     public void signout(){
         Toast.makeText(getApplicationContext(), "Signing out...", Toast.LENGTH_SHORT).show();
-        /*
-        FirebaseFirestore database = FirebaseFirestore.getInstance();
-        DocumentReference documentReference = database.collection(Constants.KEY_COLLECTION_USERS)
-                .document(preferenceManager.getString(Constants.KEY_USER_ID));
-        */
         preferenceManager.clear();
         startActivity(new Intent(getApplicationContext(), SignInActivity.class));
         finish();
-
-
 
     }
 

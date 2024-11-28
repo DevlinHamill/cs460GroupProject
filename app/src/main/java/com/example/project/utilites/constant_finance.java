@@ -1,13 +1,21 @@
 package com.example.project.utilites;
 
 public class constant_finance {
+    /**
+     * constant note variable that keeps storing firebase data more consistent
+     */
     public static final String KEY_Note ="Note";
-    public static final String KEY_OutcomeNote="OutcomeNote";
+    /**
+     * constant amount variable that keeps storing firebase data more consistent
+     */
     public static final String KEY_Amount ="Amount";
-    public static final String KEY_OutcomeAmount="OutcomeAmount";
+    /**
+     * constant collection variable that keeps storing firebase data more consistent
+     */
     public static final String KEY_COLLECTION_FINANCE="Finance";
+    /**
+     * constant condition variable that keeps storing firebase data more consistent
+     */
     public static final String KEY_CONDITION = "Condition";
 
-    public static final String KEY_ENTER="Enter";
-    public static final String KEY_Finance_Data="FinanceData";
 }

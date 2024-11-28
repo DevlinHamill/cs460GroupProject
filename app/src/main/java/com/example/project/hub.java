@@ -11,8 +11,19 @@ import com.example.project.utilites.Constants;
 import com.example.project.utilites.PreferenceManager;
 
 public class hub extends AppCompatActivity {
+    /**
+     * stores the current user data
+     */
     private PreferenceManager preferenceManager;
+    /**
+     * connects the current activity xml file with the java file
+     */
     private ActivityHubBinding binding;
+
+    /**
+     * intializes the application
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +34,9 @@ public class hub extends AppCompatActivity {
         setVis();
     }
 
+    /**
+     * sets listeners for any gui components
+     */
     private void setListeners(){
         binding.calenderbtn.setOnClickListener(v ->
             startActivity(new Intent(getApplicationContext(), calender.class))
@@ -38,6 +52,10 @@ public class hub extends AppCompatActivity {
         );
 
     }
+
+    /**
+     * sets the visibility based on permissions
+     */
     private void setVis(){
         /*User and officer*/
         if(preferenceManager.getString(Constants.KEY_PERMISSION).equals("1")

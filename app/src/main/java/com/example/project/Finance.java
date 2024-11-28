@@ -17,24 +17,37 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Finance extends AppCompatActivity implements View.OnClickListener{
+public class Finance extends AppCompatActivity{
+    /**
+     * attaches the xml to the java doc
+     */
     private ActivityFinanceBinding binding;
-    private PreferenceManager preferenceManager;
-    public String note, amount;
-
+    /**
+     * stores the finance note as a global object
+     */
+    public String note;
+    /**
+     * allows for the total to be calculated acrossed the entire application
+     */
     public double total;
 
+    /**
+     * Creates the application
+     * @param savedInstanceState stores the current application
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         binding = ActivityFinanceBinding.inflate(getLayoutInflater());
-        preferenceManager = new PreferenceManager(getApplicationContext());
         setContentView(binding.getRoot());
         setListeners();
         getIncome();
     }
 
+    /**
+     * sets the listeners for certain GUI components
+     */
     private void setListeners(){
         binding.backbtn.setOnClickListener(v ->
                 onBackPressed()
@@ -46,15 +59,28 @@ public class Finance extends AppCompatActivity implements View.OnClickListener{
             Intent intent = new Intent(getApplicationContext(), Outcome.class);
             startActivity(intent); });
     }
+
+    /**
+     * retrieves income data from the firebase
+     */
     private void getIncome() {
         loading(true);
+        /**
+         * creates a firebase object to manipulate the firebase
+         */
         FirebaseFirestore database = FirebaseFirestore.getInstance();
         database.collection(constant_finance.KEY_COLLECTION_FINANCE).get()
                 .addOnCompleteListener(task -> {
                     loading(false);
                     if (task.isSuccessful() && task.getResult() != null) {
+                        /**
+                         * contains all finance object
+                         */
                         List<FinanceObj> incomes = new ArrayList<>();
                         for (QueryDocumentSnapshot queryDocumentSnapshot : task.getResult()) {
+                            /**
+                             * contains the current finance object being viewed
+                             */
                             FinanceObj currentStatement = new FinanceObj();
                             currentStatement.Note = queryDocumentSnapshot.getString(constant_finance.KEY_Note);
                             currentStatement.Amount = queryDocumentSnapshot.getString(constant_finance.KEY_Amount);
@@ -71,7 +97,9 @@ public class Finance extends AppCompatActivity implements View.OnClickListener{
 
                         }
                         if (incomes.size() > 0) {
-
+                            /**
+                             * holds the finance adapter info to access the recycle view
+                             */
                             FinanceAdapter incomeAdapter = new FinanceAdapter(incomes);
 
                             binding.financeRecyclerView.setAdapter(incomeAdapter);
@@ -87,6 +115,11 @@ public class Finance extends AppCompatActivity implements View.OnClickListener{
                     }
                 });
     }
+
+    /**
+     * hides and shows specific components depending on if the data is loading
+     * @param isLoading tells if the connection is still loading for the firebase
+     */
     private void loading(boolean isLoading) {
         if (isLoading) {
             binding.financeRecyclerView.setVisibility(View.INVISIBLE);
@@ -96,16 +129,22 @@ public class Finance extends AppCompatActivity implements View.OnClickListener{
             binding.financeRecyclerView.setVisibility(View.VISIBLE);
             binding.progressBar.setVisibility(View.INVISIBLE); }
     }
-    private void showErrorMessage() { // Implement error handling logic
+
+    /**
+     * display an error message
+     */
+    private void showErrorMessage() {
         showToast("No income data found.");
         binding.financeRecyclerView.setVisibility(View.GONE);
     }
+
+    /**
+     * Displays a toast depending on a input string
+     * @param message the string that needs to be displayed
+     */
     private void showToast(String message) {
-        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show(); }
-    @Override
-    public void onClick(View v) {
-        MaterialButton button = (MaterialButton) v;
-        String buttonText = button.getText().toString();
-        // String dataToCalculate = Outcome.getText().toString();
+        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
     }
+
+
 }

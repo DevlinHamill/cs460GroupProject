@@ -27,12 +27,35 @@ import java.util.List;
 import java.util.Locale;
 
 public class Message extends AppCompatActivity {
+    /**
+     * binds the xml to the java
+     */
     private ActivityMessageBinding binding;
+    /**
+     * keeps track of the receiving member
+     */
     private Member receiverMember;
+    /**
+     * keeps track of all message objects
+     */
     private List<ChatMessage> chatMessages;
+    /**
+     * creates a chat adapter object
+     */
     private ChatAdapter chatAdapter;
+    /**
+     * create a prefrence manger object to access sign in user info
+     */
     private PreferenceManager preferenceManager;
+    /**
+     * allows for the database to be accessed acrossed multiple methods
+     */
     private FirebaseFirestore database;
+
+    /**
+     * creates the application
+     * @param savedInstanceState current app instance
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,6 +86,9 @@ public class Message extends AppCompatActivity {
      * Sends the message to the Firebase
      */
     private void sendMessages(){
+        /**
+         * stores the current message data as a hashmap
+         */
         HashMap<String, Object> message = new HashMap<>();
 
         message.put(Constants.KEY_SENDER_ID, preferenceManager.getString(Constants.KEY_USER_ID));
@@ -90,11 +116,17 @@ public class Message extends AppCompatActivity {
                 .addSnapshotListener(eventListener);
     }
 
+    /**
+     * intializes an event listener for the overall members
+     */
     private final EventListener<QuerySnapshot> eventListener = ((value, error) -> {
         if(error != null){
             return;
         }
         if(value != null){
+            /**
+             * saves the amount of chat messages as a integer
+             */
             int count = chatMessages.size();
             for(DocumentChange documentChange: value.getDocumentChanges()){
                 if(documentChange.getType() == DocumentChange.Type.ADDED){
@@ -129,6 +161,9 @@ public class Message extends AppCompatActivity {
      * @return decoded image
      */
     private Bitmap getBitmapFromEncodedString(String encodedImage){
+        /**
+         * creates a byte array to store the decoded image
+         */
         byte[] bytes = Base64.decode(encodedImage, Base64.DEFAULT);
         return BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
     }

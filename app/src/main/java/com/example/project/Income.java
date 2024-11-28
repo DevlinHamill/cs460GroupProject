@@ -14,20 +14,26 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.HashMap;
 
 public class Income extends AppCompatActivity {
-
+    /**
+     * connects the xml to the java file
+     */
     private ActivityIncomeBinding binding;
-    private PreferenceManager preferenceManager;
 
-
+    /**
+     * creates the application
+     * @param savedInstanceState contains the current application instance
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityIncomeBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        //preferenceManager = new PreferenceManager(getApplicationContext());
         setListener();
     }
 
+    /**
+     * sets listeners for specific buttons
+     */
     private void setListener() {
 
         binding.buttonEnter.setOnClickListener(v -> {
@@ -40,9 +46,18 @@ public class Income extends AppCompatActivity {
         );
     }
 
+    /**
+     * puts the current income into the firestore database
+     */
     private void inCome() { //store data in firebase
         loading(true);
+        /**
+         * declares a firestore database object to add values to it
+         */
         FirebaseFirestore database = FirebaseFirestore.getInstance();
+        /**
+         * contains all finance data to be stored
+         */
         HashMap<String, String> finance = new HashMap<>();
         finance.put(constant_finance.KEY_Note, binding.noteIncome.getText().toString());
         finance.put(constant_finance.KEY_Amount, binding.amountIncome.getText().toString());
@@ -52,9 +67,9 @@ public class Income extends AppCompatActivity {
                 .add(finance)
                 .addOnSuccessListener(documentReference -> {
                     loading(false);
-                    //preferenceManager.setFinanceBoolean(constant_finance.KEY_ENTER, true);
-                    //preferenceManager.setFinanceString(constant_finance.KEY_IncomeNote, binding.noteIncome.getText().toString());
-
+                    /**
+                     * intializes a path to start a new activity
+                     */
                     Intent intent = new Intent(getApplicationContext(), Finance.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(intent);
@@ -64,6 +79,11 @@ public class Income extends AppCompatActivity {
                     showToast(exception.getMessage());
                 });
     }
+
+    /**
+     * hides gui components depending on the applicaiton is loading.
+     * @param isLoading tells if the application
+     */
     private void loading(boolean isLoading) {
         if (isLoading) {
             binding.buttonEnter.setVisibility(View.INVISIBLE);
@@ -74,6 +94,10 @@ public class Income extends AppCompatActivity {
         }
     }
 
+    /**
+     * checks if the data being inputed is valid
+     * @return a boolean value to tell if it is valid
+     */
     private boolean isValidIncomeData() {
         if (binding.noteIncome.getText().toString().trim().isEmpty()) {
             showToast("Please put Note");
@@ -86,6 +110,10 @@ public class Income extends AppCompatActivity {
         }
     }
 
+    /**
+     * displays a toast message based on a string input
+     * @param message string message being displayed
+     */
     private void showToast(String message) {
         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
     }

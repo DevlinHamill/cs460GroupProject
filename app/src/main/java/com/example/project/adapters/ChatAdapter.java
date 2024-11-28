@@ -14,10 +14,25 @@ import com.example.project.model.ChatMessage;
 import java.util.List;
 
 public class ChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+    /**
+     * bitmap that holds the receiving chat image data
+     */
     private Bitmap receiverProfileImage;
+    /**
+     * contains all chat messages exchanged between the user and the reciever
+     */
     private final List<ChatMessage> chatMessages;
+    /**
+     * contains the senders identification
+     */
     private final String sendId;
+    /**
+     * dictates if the item on the recycle view is a sender message
+     */
     public static final int VIEW_TYPE_SENT = 1;
+    /**
+     * dictates if the item on the recycle view is a reciever message
+     */
     public static final int VIEW_TYPE_RECEIVED = 2;
 
     /**
@@ -91,7 +106,9 @@ public class ChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     }
 
     static class SentMessageViewHolder extends RecyclerView.ViewHolder{
-
+        /**
+         * connects the sent item xml to the current java file
+         */
         private final ItemContainerSentMessageBinding binding;
 
         /**
@@ -115,6 +132,9 @@ public class ChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     static class RecieverMessageViewHolder extends RecyclerView.ViewHolder{
 
+        /**
+         * connects the reciever message binding xml of this java file
+         */
         private final ItemContainerReceivedMessageBinding binding;
 
         /**

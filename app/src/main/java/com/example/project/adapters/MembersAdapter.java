@@ -16,8 +16,13 @@ import com.example.project.listeners.MemberListener;
 import java.util.List;
 
 public class MembersAdapter extends RecyclerView.Adapter<MembersAdapter.MemberViewHolder> {
-
+    /**
+     * keeps track of all members
+     */
     private final List<Member> members;
+    /**
+     * creates a member listener object to allow for the member to be clicked on
+     */
     private final MemberListener memberListener;
 
     /**
@@ -68,6 +73,9 @@ public class MembersAdapter extends RecyclerView.Adapter<MembersAdapter.MemberVi
     }
 
     class MemberViewHolder extends RecyclerView.ViewHolder{
+        /**
+         * refrences the xml container for a member to be used within the recycle view
+         */
         ItemContainerMemberBinding binding;
 
         /**
@@ -97,6 +105,9 @@ public class MembersAdapter extends RecyclerView.Adapter<MembersAdapter.MemberVi
      * @return Member's decoded image
      */
     private Bitmap getMemberImage(String encodeImage){
+        /**
+         * creates a byte array to store the decoded image info
+         */
         byte [] bytes = Base64.decode(encodeImage, Base64.DEFAULT);
 
         return BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
