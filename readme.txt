@@ -7,5 +7,5 @@ making the project easier to access and use.
 The final report contains the testing 
 associated with this project as well.
 
-The screenshots zip contains a bunch of screen shots
+The screenshots zip contains a bunch of screenshots
 from the application testing.
