@@ -68,6 +68,9 @@ public class MembersList extends AppCompatActivity implements MemberListener {
         database.collection(Constants.KEY_COLLECTION_USERS).get()
                 .addOnCompleteListener(task -> {
                     loading(false);
+                    /**
+                     * current user id
+                     */
                     String currentUserID = preferenceManager.getString(Constants.KEY_USER_ID);
                     if(task.isSuccessful() && task.getResult() != null){
                         /**
@@ -78,6 +81,10 @@ public class MembersList extends AppCompatActivity implements MemberListener {
                             if(currentUserID.equals(queryDocumentSnapshot.getId())){
                                 continue;
                             }
+                            if(queryDocumentSnapshot.getString(Constants.KEY_PERMISSION).equals("4")){
+                                continue;
+                            }
+
                             /**
                              * keeps track of the current member
                              */
