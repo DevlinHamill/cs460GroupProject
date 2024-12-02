@@ -24,5 +24,9 @@ email: CassieT@test.com
 password: 12345
 
 president:
+email: Devlin@test.com
+password: 12345
+
+Treasurer:
 email: Aty@test.com
 password: 12345
