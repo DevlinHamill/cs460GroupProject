@@ -20,11 +20,11 @@ officer:
 email: JoshM@test.com
 password: 12345
 
-email: CassieT@test.com
-password: 12345
-
 president:
 email: Devlin@test.com
+password: 12345
+
+email: CassieT@test.com
 password: 12345
 
 Treasurer:
